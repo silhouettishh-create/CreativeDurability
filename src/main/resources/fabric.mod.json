@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "creativedurability",
+  "version": "${version}",
+  "name": "Creative Durability",
+  "description": "Mengaktifkan pengurangan durability item di Creative Mode seperti di Survival, dikontrol lewat command /creativedurability. Tidak memengaruhi Survival atau Adventure Mode.",
+  "authors": [
+    "Creative Durability"
+  ],
+  "contact": {},
+  "license": "CC0-1.0",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.creativedurability.CreativeDurabilityMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.2",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}
