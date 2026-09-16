@@ -1,0 +1,19 @@
+# Gradle
+.gradle/
+build/
+out/
+
+# Gradle wrapper jar (biner) - biarkan GitHub Actions yang pakai Gradle langsung,
+# atau jalankan `gradle wrapper` sekali secara lokal kalau mau commit wrapper-nya.
+gradle/wrapper/gradle-wrapper.jar
+gradlew
+gradlew.bat
+
+# IDE
+.idea/
+*.iml
+.vscode/
+bin/
+
+# OS
+.DS_Store
