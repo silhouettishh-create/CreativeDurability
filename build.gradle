@@ -6,15 +6,17 @@ plugins {
 version = project.mod_version
 group = project.maven_group
 
+loom {
+    // Minecraft 26.2 sudah unobfuscated, tidak butuh mappings external
+}
+
 repositories {
-    // Tambahkan repository lain di sini jika mod ini butuh dependency mod lain
+    mavenCentral()
 }
 
 dependencies {
-    // Minecraft 26.2 didistribusikan tanpa obfuscation, jadi TIDAK ada
-    // baris "mappings" di sini (berbeda dari mod 1.21.x ke bawah yang
-    // butuh Yarn/Mojmap). Loom menangani ini otomatis untuk versi 26.1+.
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings loom.officialMojangMappings()
 
     implementation "net.fabricmc:fabric-loader:${project.loader_version}"
     implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
@@ -31,7 +33,6 @@ processResources {
 
 tasks.withType(JavaCompile).configureEach {
     it.options.encoding = "UTF-8"
-    // Minecraft 26.2 butuh Java 25+
     it.options.release = 25
 }
 
